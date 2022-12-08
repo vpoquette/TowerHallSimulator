@@ -9,21 +9,9 @@ using TowerHallSimulator.Models;
 
 namespace TowerHallSimulator.Controllers
 {
-    public class HelloController : Controller
+    public class GroundFloorController : Controller
     {
         public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult Minnesota()
-        {
-            return View();
-        }
-        public IActionResult Wisconsin()
-        {
-            return View();
-        }
-        public IActionResult Maryland()
         {
             return View();
         }
