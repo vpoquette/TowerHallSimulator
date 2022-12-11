@@ -12,7 +12,11 @@ namespace TowerHallSimulator.Controllers
 {
     public class FifthFloorController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Double()
+        {
+            return View();
+        }
+        public IActionResult Single()
         {
             return View();
         }
