@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 namespace TowerHallSimulator
 {
     public class Classroom { }
-    public class FourthFloorClasses : classroomInformation
+    public class FourthFloorClasses : IClassroomInformation
     {
-        public async Task Main() // does need to be async Task
+        public static async Task Main() // does need to be async Task
         {
             string[] analogies = { "classroom", "sports", "video game", "animal", "job", "technology", "religion", "nature", "weather" };
             string[] reactions = { "understand perfectly", "are more confused than ever", "are starting to understand", "are nodding along" };
             string[] specialActivities = { "quiz", "film", "in-class essay", "guest speaker", "group activity", "technology", "independent project work"};
 
-            Classroom class4414 = await ClassInSession("4414", reactions, analogies, specialActivities);
+            Classroom class4414 = new Classroom();
+
+            class4414 = await ClassInSession("4414", reactions, analogies, specialActivities);
             // uncomment once we know one works
             /*
             Classroom class4605 = await ClassInSession("4605", reactions, analogies, specialActivities);
@@ -26,7 +28,7 @@ namespace TowerHallSimulator
             Classroom class4141 = await ClassInSession("4141", reactions, analogies, specialActivities);
             */
         }
-        public async Task<Classroom> ClassInSession(String classNum, String[] reactions, String[] analogies, String[] specialActivities)
+        public static async Task<Classroom> ClassInSession(String classNum, String[] reactions, String[] analogies, String[] specialActivities)
         {
             var lecture = new Classroom();
             Random activity = new Random();
@@ -40,7 +42,7 @@ namespace TowerHallSimulator
             ClassOver();
             return lecture;
         }
-        public async Task<Classroom> Lecture(String[] reactions, String[] analogies, String classNum)
+        public static async Task<Classroom> Lecture(String[] reactions, String[] analogies, String classNum)
         {
             RandomAnalogy(analogies, classNum);
             await Task.Delay(3000); // students must consider the analogy before they react
@@ -48,7 +50,7 @@ namespace TowerHallSimulator
             return new Classroom();
         }
 
-        public async Task<Classroom> SpecialActivity(String[] specialActivities)
+        public static async Task<Classroom> SpecialActivity(String[] specialActivities)
         {
             Random randomActivities = new Random();
             int randomActivity = randomActivities.Next(0, specialActivities.Length);
@@ -58,7 +60,7 @@ namespace TowerHallSimulator
             return new Classroom();
         }
 
-        public async void RandomAttendance()
+        public static async void RandomAttendance()
         {
             Random random = new Random();
             int attendance = random.Next(1, 101); // generates number from 1 to 100
@@ -66,14 +68,14 @@ namespace TowerHallSimulator
             Console.Write(attendance + "% of students are in attendance today.");
         }
 
-        public void RandomAnalogy(String[] analogies, String classNum)
+        public static void RandomAnalogy(String[] analogies, String classNum)
         {
             Random randomAnalogies = new Random();
             int randomAnalogy = randomAnalogies.Next(0, analogies.Length);
             Console.Write("In classroom #" + classNum + ", the Professor uses a " + analogies[randomAnalogy] + " analogy to explain the concept.");
         }
 
-        public void RandomReaction(String[] reactions)
+        public static void RandomReaction(String[] reactions)
         {
             Random randomReaction = new Random();
             int randomReact = randomReaction.Next(0, reactions.Length);
