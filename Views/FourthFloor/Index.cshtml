@@ -1,13 +1,22 @@
-﻿<p>
+﻿<p id="changeThingsUp">
     Several paintings line the walls; some of them were created by students. <br>
     You also see newsboards for the individual departments on this floor.
 </p>
 
-@{  
-    await TowerHallSimulator.FourthFloorClasses.Main();
-} 
-    <!--once this works I can split the classes and call them for the single-responsibilty principle-->
-
+@{FourthFloorClasses classroom = new FourthFloorClasses();
+    //TowerHallSimulator.FourthFloorClasses.testMethod()}
+if (classroom.testMethod() == "yo")
+{
+    <p>:)</p>
+}
+else
+{
+    <p>This floor is under construction. Please be patient as we build up the program.</p>
+}
+    //TowerHallSimulator.FourthFloorClasses.Main();
+    //TowerHallSimulator.FourthFloorClasses.ClassInSession("4414", reactions, analogies, specialActivities)
+}
+<!--once this works I can split the classes and call them for the single-responsibilty principle-->
 <!--
     left side
 -->
