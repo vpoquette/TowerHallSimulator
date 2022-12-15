@@ -1,39 +1,133 @@
-﻿<p id="changeThingsUp">
+﻿<!--flavortext at the top of the page-->
+<p>
+    This floor houses the School of Arts and Letters. <br>
     Several paintings line the walls; some of them were created by students. <br>
     You also see newsboards for the individual departments on this floor.
 </p>
+<!---calling methods-->
+<!---Honors Lounge-->
+<!---Music Library-->
+<!---Photography darkroom-->
+<!--music practice rooms-->
+@{
 
-@{FourthFloorClasses classroom = new FourthFloorClasses();
-    //TowerHallSimulator.FourthFloorClasses.testMethod()}
-if (classroom.testMethod() == "yo")
-{
-    <p>:)</p>
 }
-else
-{
-    <p>This floor is under construction. Please be patient as we build up the program.</p>
+@{
+    <!--classroom classes; since the contents are random each time, I only need one object for each class-->
+    Activity classroomActivity = new Activity();
+    Analogy classroomAnalogy = new Analogy();
+    Attendance classroomAttendance = new Attendance();
+    Reaction classroomReaction = new Reaction();
+
+    <!---brackets for ease of labeling different classes and switching out methods-->
+    <!--calling the methods for each object in each classroom-->
+    <span>Classroom 4414</span>
+    {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
+        <span>Classroom 4605</span>
+        {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
+        <span>Classroom 4611</span>
+        {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
+        <span>Classroom 4105</span>
+        {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
+        <span>Classroom 4115</span>
+        {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
+        <span>Classroom 4119</span>
+        {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
+        <span>Classroom 4125</span>
+        {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
+        <span>Classroom 4141</span>
+        {
+            <br>
+            @Html.Raw(classroomActivity.SpecialActivity());
+            <br>
+            @Html.Raw(classroomAttendance.RandomAttendance());
+            <br>
+            @Html.Raw(classroomAnalogy.RandomAnalogy());
+            <br>
+            @Html.Raw(classroomReaction.RandomReaction());
+            <br>
+        }
+        <br>
 }
-    //TowerHallSimulator.FourthFloorClasses.Main();
-    //TowerHallSimulator.FourthFloorClasses.ClassInSession("4414", reactions, analogies, specialActivities)
-}
-<!--once this works I can split the classes and call them for the single-responsibilty principle-->
-<!--
-    left side
--->
-<!--Branch to 4400s--->
-<!--4414: classroom on left side-->
-<!--Branch to 4600s--->
-<!--4605: classroom on right side-->
-<!--4611: classroom on right side-->
-<!--
-    right side
--->
-<!--4105: classroom-->
-<a asp-action="double" asp-controller="FifthFloor">Double Classroom</a>
-<br>
-<!--4115: classroom-->
-<a asp-action="single" asp-controller="FifthFloor">Single Conference Room</a>
-<br>
-<!--4119: classroom-->
-<!--4125: classroom-->
-<!--4141: classroom-->
+
+    <a asp-action="double" asp-controller="FifthFloor">Double Classroom</a>
+    <br>
+    <a asp-action="single" asp-controller="FifthFloor">Single Conference Room</a>
+    <br>
