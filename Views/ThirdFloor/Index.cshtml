@@ -1,9 +1,137 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<h1>Tower Hall, Third Floor</h1>
+<!--flavortext at the top of the page-->
 <p>
-    This floor is under construction. Please be patient as we build up the program.
+    This floor houses the School of Business, Leadership, and Professional Studies. <br>
+    In the main hallway, there are boards of alumni success stories and display boards of faculty.
 </p>
-<!---<a href="http:/Hello/Maryland">Maryland</a>--->
+<h2>Unique Rooms</h2>
+<p>
+    The unique rooms on this floor include the music hall and the Native Student Center.
+</p>
+<!---calling methods-->
+@{<!--special features of the floor-->
+    <!--instantiating objects-->
+    MusicHall hall = new MusicHall();
+    NativeStudentCenter center = new NativeStudentCenter();
+    <!--printing HTML-->
+    @Html.Raw(hall.Hall());
+    <br>
+    @Html.Raw(center.Center());
+    <br>
+    <br>
+}
+<h2>Classrooms</h2>
+@{<!--classrooms; since the contents are random each time, I only need one object for each class-->
+    <!--instantiating objects-->
+    Activity classroomActivity = new Activity();
+    Analogy classroomAnalogy = new Analogy();
+    Attendance classroomAttendance = new Attendance();
+    Reaction classroomReaction = new Reaction();
+
+    <!---brackets for ease of containing the HTML methods for each classroom-->
+    <!--the same methods are called over and over, but I'm not sure how to put the calls into a single method if I'm in a cshtml file.-->
+    <span>Classroom 3414</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3410</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3615</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3121</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3131</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3141</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3147</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3150</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+}

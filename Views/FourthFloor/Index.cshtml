@@ -1,133 +1,151 @@
-﻿<!--flavortext at the top of the page-->
+﻿<h1>Tower Hall, Fourth Floor</h1>
+<!--flavortext at the top of the page-->
 <p>
     This floor houses the School of Arts and Letters. <br>
     Several paintings line the walls; some of them were created by students. <br>
     You also see newsboards for the individual departments on this floor.
 </p>
+<h2>Unique Rooms</h2>
+<p>
+    The unique rooms on this floor include the photography darkroom, honors lounge, music library, and music practice rooms.
+</p>
 <!---calling methods-->
-<!---Honors Lounge-->
-<!---Music Library-->
-<!---Photography darkroom-->
-<!--music practice rooms-->
-@{
-
+@{<!--special features of the floor-->
+    <!--instantiating objects-->
+    PhotographyDarkoom darkroom = new PhotographyDarkoom();
+    HonorsLounge lounge = new HonorsLounge();
+    MusicLibrary library = new MusicLibrary();
+    MusicPracticeRooms practice = new MusicPracticeRooms();
+    <!--printing HTML-->
+    @Html.Raw(darkroom.Darkroom());
+    <br>
+    @Html.Raw(lounge.Lounge());
+    <br>
+    @Html.Raw(library.Library());
+    <br>
+    @Html.Raw(practice.PracticeRooms());
+    <br>
+    <br>
 }
-@{
-    <!--classroom classes; since the contents are random each time, I only need one object for each class-->
+<h2>Classrooms</h2>
+@{<!--classrooms; since the contents are random each time, I only need one object for each class-->
+    <!--instantiating objects-->
     Activity classroomActivity = new Activity();
     Analogy classroomAnalogy = new Analogy();
     Attendance classroomAttendance = new Attendance();
     Reaction classroomReaction = new Reaction();
 
-    <!---brackets for ease of labeling different classes and switching out methods-->
-    <!--calling the methods for each object in each classroom-->
+    <!---brackets for ease of containing the HTML methods for each classroom-->
+    <!--the same methods are called over and over, but I'm not sure how to put the calls into a single method if I'm in a cshtml file.-->
     <span>Classroom 4414</span>
     {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
         <br>
-        <span>Classroom 4605</span>
-        {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
+        @Html.Raw(classroomActivity.SpecialActivity());
         <br>
-        <span>Classroom 4611</span>
-        {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
+        @Html.Raw(classroomAttendance.RandomAttendance());
         <br>
-        <span>Classroom 4105</span>
-        {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
         <br>
-        <span>Classroom 4115</span>
-        {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
+        @Html.Raw(classroomReaction.RandomReaction());
         <br>
-        <span>Classroom 4119</span>
-        {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
+    }
+    <br>
+    <span>Classroom 4605</span>
+    {
         <br>
-        <span>Classroom 4125</span>
-        {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
+        @Html.Raw(classroomActivity.SpecialActivity());
         <br>
-        <span>Classroom 4141</span>
-        {
-            <br>
-            @Html.Raw(classroomActivity.SpecialActivity());
-            <br>
-            @Html.Raw(classroomAttendance.RandomAttendance());
-            <br>
-            @Html.Raw(classroomAnalogy.RandomAnalogy());
-            <br>
-            @Html.Raw(classroomReaction.RandomReaction());
-            <br>
-        }
+        @Html.Raw(classroomAttendance.RandomAttendance());
         <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 4611</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 4105</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 4115</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 4119</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 4125</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 4141</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
 }
 
-    <a asp-action="double" asp-controller="FifthFloor">Double Classroom</a>
-    <br>
-    <a asp-action="single" asp-controller="FifthFloor">Single Conference Room</a>
-    <br>
+<!--
+<a asp-action="double" asp-controller="FifthFloor">Double Classroom</a>
+<br>
+<a asp-action="single" asp-controller="FifthFloor">Single Conference Room</a>
+<br>
+--->

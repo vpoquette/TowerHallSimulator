@@ -1,8 +1,116 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<h1>Tower Hall, Second Floor</h1>
+<!--flavortext at the top of the page-->
 <p>
-    This floor is under construction. Please be patient as we build up the program.
+    Several works of art line the walls. <br>
+    There's also some boards with tips and tricks for success in the main hallway, <br>
+    as well as details on academic programs.
 </p>
+<h2>Unique Rooms</h2>
+<p>
+    There are a number of unique rooms on this floor, including the Writing Center, Veterans Center, Tutoring Center, <br>
+    micro lab, Facilities area, Counseling offices, and McNair Scholar Center.
+</p>
+<!---calling methods-->
+@{ <!--special features of the floor-->
+    <!--instantiating objects-->
+    WritingCenter writing = new WritingCenter();
+    VeteransCenter veterans = new VeteransCenter();
+    TutoringCenter tutoring = new TutoringCenter();
+    MicroLab lab = new MicroLab();
+    Facilities facilities = new Facilities();
+    Counseling counseling = new Counseling();
+    McNair mcNair = new McNair();
+
+    <!--printing HTML-->
+    @Html.Raw(writing.Center());
+    <br>
+    @Html.Raw(veterans.Center());
+    <br>
+    @Html.Raw(tutoring.Center());
+    <br>
+    @Html.Raw(lab.Lab());
+    <br>
+    @Html.Raw(facilities.FacilitiesArea());
+    <br>
+    @Html.Raw(counseling.Counsel());
+    <br>
+    @Html.Raw(mcNair.Center());
+    <br>
+    <br>
+}
+<h2>Classrooms</h2>
+@{ <!--classrooms-->
+    <!--instantiating objects-->
+    Activity classroomActivity = new Activity();
+    Analogy classroomAnalogy = new Analogy();
+    Attendance classroomAttendance = new Attendance();
+    Reaction classroomReaction = new Reaction();
+
+    <!---brackets for ease of containing the HTML methods for each classroom-->
+    <!--the same methods are called over and over, but I'm not sure how to put the calls into a single method if I'm in a cshtml file.-->
+    <span>Classroom 3414</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 3410</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 2607  </span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 2611</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+    <span>Classroom 2121A</span>
+    {
+        <br>
+        @Html.Raw(classroomActivity.SpecialActivity());
+        <br>
+        @Html.Raw(classroomAttendance.RandomAttendance());
+        <br>
+        @Html.Raw(classroomAnalogy.RandomAnalogy());
+        <br>
+        @Html.Raw(classroomReaction.RandomReaction());
+        <br>
+    }
+    <br>
+}
