@@ -1,8 +1,28 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<h1>Tower Hall, Ground Floor</h1>
+<!--flavortext at the top of the page-->
 <p>
-    This floor is under construction. Please be patient as we build up the program.
+    This floor has no classrooms. <br>
+    The area is pretty open, with posters plastered all over the walls for events and groups on campus.
 </p>
+<h2>Unique Rooms</h2>
+<p>
+    The unique areas on this floor include Storm's Den, the Mailroom, the Intercultural Center, and the Oratory.
+</p>
+<!---calling methods-->
+@{<!--special features of the floor-->
+    <!--instantiating objects-->
+    StormsDen storms = new StormsDen();
+    Mailroom mailroom = new Mailroom();
+    InterculturalCenter center = new InterculturalCenter();
+    Oratory oratory = new Oratory();
+    <!--printing HTML-->
+    @Html.Raw(storms.Den());
+    <br>
+    @Html.Raw(mailroom.Mail());
+    <br>
+    @Html.Raw(center.Center());
+    <br>
+    @Html.Raw(oratory.Room());
+    <br>
+    <br>
+}
