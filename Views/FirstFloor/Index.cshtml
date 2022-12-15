@@ -1,8 +1,28 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<h1>Tower Hall, First Floor</h1>
+<!--flavortext at the top of the page-->
 <p>
-    This floor is under construction. Please be patient as we build up the program.
+    This floor has no classrooms. <br>
+    In the main hallway, there are displays for each of the Benedictine Values, along with other values of the College.
 </p>
+<h2>Unique Rooms</h2>
+<p>
+    The unique areas on this floor include Mitchell Auditorium, the IT Service Desk, the Center for Experiential Learning, and the Saints Shop.
+</p>
+<!---calling methods-->
+@{<!--special features of the floor-->
+    <!--instantiating objects-->
+    Auditorium mitchell = new Auditorium();
+    ITServiceDesk desk = new ITServiceDesk();
+    ExperientialLearning center = new ExperientialLearning();
+    SaintsShop shop = new SaintsShop();
+    <!--printing HTML-->
+    @Html.Raw(mitchell.Mitchell());
+    <br>
+    @Html.Raw(desk.Desk());
+    <br>
+    @Html.Raw(center.Center());
+    <br>
+    @Html.Raw(shop.Shop());
+    <br>
+    <br>
+}
