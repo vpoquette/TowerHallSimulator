@@ -12,10 +12,10 @@ namespace TowerHallSimulator
     {
         public String RandomAnalogy()
         {
-            string[] analogies = { "classroom", "sports", "video game", "animal", "job", "technology", "religion", "nature", "weather" };
+            string[] analogies = { "a classroom", "a sports", "a video game", "an animal", "a job", "a technology", "a religion", "a nature", "a weather" };
             Random randomAnalogies = new Random();
             int randomAnalogy = randomAnalogies.Next(0, analogies.Length);
-            return ("During the lecture, the professor uses a " + analogies[randomAnalogy] + " analogy.");
+            return ("During the lecture, the professor uses " + analogies[randomAnalogy] + " analogy.");
         }
     }
 }
